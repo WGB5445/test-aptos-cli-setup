@@ -1,0 +1,20 @@
+name: Aptos Move Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Aptos CLI
+        uses: WGB5445/aptos-cli-setup@v1
+      - name: Build Move project
+        run: aptos move build --dev
+      - name: Run tests
+        run: aptos move test
