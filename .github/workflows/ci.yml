@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup Aptos CLI
-        uses: WGB5445/aptos-cli-setup@main
+        uses: WGB5445/aptos-cli-setup@v1
       - name: Build Move project
         run: aptos move build --dev
       - name: Run tests
